@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heater/AC Simulation</title>
+    <link rel="stylesheet" href="/HCI TEST/Laboratory-Midterm Requirement 3/styles.css">
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Smart Heater/AC Control System</h1>
+        </header>
+        
+        <section class="displays">
+            <div class="display">
+                <h2>Current Time</h2>
+                <p id="current-time">--:--:--</p>
+                <p id="current-day">---</p>
+            </div>
+            <div class="display">
+                <h2>Inside Temperature</h2>
+                <p id="inside-temp">-- °F</p>
+            </div>
+            <div class="display">
+                <h2>System Status</h2>
+                <p id="system-status">--</p>
+                <p id="fan-status">Fan: --</p>
+            </div>
+            <div class="display">
+                <h2>Outside Temperature</h2>
+                <p id="outside-temp">-- °F</p>
+            </div>
+        </section>
+        
+        <section class="controls">
+            <div class="control-group">
+                <h3>System Mode</h3>
+                <button onclick="setMode('cool')">Cool</button>
+                <button onclick="setMode('heat')">Heat</button>
+                <button onclick="setMode('off')">Off</button>
+            </div>
+            
+            <div class="control-group">
+                <h3>Fan Mode</h3>
+                <button onclick="setFan('auto')">Automatic</button>
+                <button onclick="setFan('on')">On</button>
+            </div>
+            
+            <div class="control-group">
+                <h3>Set Desired Temperature</h3>
+                <input type="number" id="desired-temp" placeholder="°F">
+                <button onclick="setDesiredTemp()">Set Temperature</button>
+            </div>
+            
+            <div class="control-group">
+                <h3>Temperature Units</h3>
+                <button onclick="setUnit('F')">°F</button>
+                <button onclick="setUnit('C')">°C</button>
+            </div>
+
+            <!-- New Zone Control -->
+            <div class="control-group">
+                <h3>Select Zone</h3>
+                <button onclick="setZone('living room')">Living Room</button>
+                <button onclick="setZone('kitchen')">Kitchen</button>
+                <button onclick="setZone('bedroom')">Bedroom</button>
+            </div>
+        </section>
+        
+        <section class="graphs">
+            <h3>Temperature Graphs</h3>
+            <canvas id="tempChart" width="400" height="200"></canvas>
+        </section>
+        
+        <footer>
+            <p>&copy; Klent Paraiso BSCS-3
+            <br>CS-HCI Midterm Project</p>
+        </footer>
+    </div>
+
+    <script src="/HCI TEST/Laboratory-Midterm Requirement 3/script.js"></script>
+</body>
+</html>
